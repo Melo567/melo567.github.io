@@ -45,6 +45,7 @@
 	}
 	.contact-details {
 		padding: 20px 0px;
+		justify-content: center;
 	}
 	.contact-details i {
 		margin-right: 15px;
@@ -180,7 +181,7 @@
 		margin: 0 5px 20px;
 	}
 	.contact-details {
-		padding: 20px 0px;
+		padding: 20px 10px;
 	}
 	.lines {
 		width: 92vw;
@@ -256,7 +257,7 @@
 		margin: 0 2px 20px;
 	}
 	.contact-details {
-		padding: 20px 0px;
+		padding: 20px 10px;
 	}
 	.lines {
 		width: 92vw;

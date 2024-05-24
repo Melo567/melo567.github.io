@@ -1175,7 +1175,8 @@ dl, ol, ul {
 	text-align: left;
 	margin-bottom: 30px;
 	padding: 20px 10px;
-	display: block;
+	display: flex;
+	align-items: center;
 	overflow: hidden;
 }
 
@@ -1298,4 +1299,6 @@ button, input, textarea:focus {
 	margin-right: auto;
 }
 
-  
+.element-span {
+	color: #ea1538
+}
