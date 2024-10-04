@@ -19,17 +19,19 @@
 }
 
 .slider-container {
-    margin-top: 40px;
-    width: 700vw; /* Largeur du cadre visible */
-    height: 200px; /* Hauteur du cadre visible */
+    width: 700vw; /* Largeur du cadre visible *//* Hauteur du cadre visible */
     overflow: hidden; /* Masque les images qui dépassent */
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .slider {
     display: flex;
+    align-items: center;
     width: calc(100vw * 8); /* Largeur de toutes les images combinées */
     animation: slideOneByOne 18s linear infinite;
+    
   }
   
   .slide {
