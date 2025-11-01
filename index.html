@@ -11,15 +11,15 @@
     <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
     <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
     
-    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="icon" type="image/png" href="./assets/img/favicon-96x96.png">
     
-    <!-- Google Fonts: Inter pour la lisibilité, et une police plus douce pour les titres --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons (toujours pratiques, mais on peut les styliser) --><script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         /* Configuration Tailwind personnalisée pour les couleurs Ghibli-esque */
@@ -99,6 +99,18 @@
         .timeline-item:hover .timeline-dot {
             transform: scale(1.2);
         }
+        
+        /* Styles pour les descriptions de poste */
+        .timeline-item ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.75rem;
+            color: var(--color-ghibli-light-blue);
+        }
+        .timeline-item li {
+            margin-bottom: 0.25rem;
+        }
+
 
         /* Animations au scroll */
         .reveal {
@@ -205,11 +217,22 @@
             border: 1px solid var(--color-ghibli-light-blue);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .project-card-ghibli:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
         }
+        .project-card-ghibli-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card-ghibli-footer {
+            margin-top: auto;
+        }
+        
         
         /* Styles pour les cartes d'avis */
         .testimonial-card-ghibli {
@@ -222,7 +245,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header --><header class="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-sm bg-var(--color-ghibli-dark-green)/80 z-50 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-sm bg-var(--color-ghibli-dark-green)/80 z-50 transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -242,7 +265,7 @@
     </header>
 
     <main>
-        <!-- 1️⃣ Section Accueil / Présentation --><section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <div class="animated-bg">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
@@ -260,7 +283,7 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- 2️⃣ Section "À propos de moi" --><section id="a-propos" class="py-20 md:py-32">
+            <section id="a-propos" class="py-20 md:py-32">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">À propos de moi</h2>
                     <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
@@ -276,7 +299,7 @@
                         <div class="mt-8 flex flex-wrap gap-4 items-center">
                             <span class="font-semibold text-var(--color-ghibli-light-blue)">Technologies :</span>
                             <div class="flex flex-wrap gap-4">
-                                <!-- Les couleurs des icônes de techno restent contrastées pour la lisibilité --><span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="smartphone"></i>Flutter</span>
+                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="smartphone"></i>Flutter</span>
                                 <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="atom"></i>React Native</span>
                                 <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="code"></i>Kotlin</span>
                                 <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="code-2"></i>Swift</span>
@@ -287,122 +310,104 @@
                 </div>
             </section>
 
-            <!-- 3️⃣ Section "Parcours professionnel" --><section id="parcours" class="py-20 md:py-32">
+            <section id="parcours" class="py-20 md:py-32">
                  <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">Parcours professionnel</h2>
                     <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
                 </div>
                 <div class="max-w-3xl mx-auto">
                     <div class="relative">
+                        
                         <div class="timeline-item reveal">
                              <div class="timeline-dot"></div>
-                            <p class="text-sm accent-color font-semibold">2023 – 2025</p>
+                            <p class="text-sm accent-color font-semibold">Octobre 2023 – À présent</p>
                             <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Développeur Mobile Senior</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Esokia</p>
-                            <p class="text-var(--color-ghibli-cream)">Flutter, React Native, Intégation Apple Pay / Google Pay, Firebase</p>
+                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Esokia, Antananarivo</p>
+                            <p class="text-var(--color-ghibli-cream)">Développement et maintenance d'applications de services en ligne (données sécurisées, paiements).</p>
+                             <ul>
+                                <li>Mise en œuvre de notifications push et intégration de services tiers de paiement.</li>
+                                <li>Application des bonnes pratiques (tests automatisés, Redux/Riverpod, CI/CD).</li>
+                            </ul>
                         </div>
+                        
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
-                            <p class="text-sm accent-color font-semibold">2022 – 2023</p>
+                            <p class="text-sm accent-color font-semibold">Mars 2022 – Septembre 2023</p>
                             <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Lead Développeur Mobile</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology</p>
-                            <p class="text-var(--color-ghibli-cream)">Flutter, Swift, Kotlin, AR, Firebase</p>
+                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology, Antananarivo</p>
+                            <p class="text-var(--color-ghibli-cream)">Encadrement d'équipe et développement d'apps métiers (transport, hôtellerie).</p>
+                             <ul>
+                                <li>Mise en place de l'architecture logicielle et coordination technique.</li>
+                                <li>Revue de code, automatisation des tests et suivi de production.</li>
+                                <li>Intégration de cartographie et gestion de données temps réel.</li>
+                            </ul>
                         </div>
+                        
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
-                            <p class="text-sm accent-color font-semibold">2020 – 2022</p>
+                            <p class="text-sm accent-color font-semibold">Décembre 2022 – Janvier 2023</p>
+                            <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Consultant Développeur React Native</h3>
+                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Freelance, Antananarivo</p>
+                            <p class="text-var(--color-ghibli-cream)">Création d'une application bien-être avec animations dynamiques et notifications push.</p>
+                             <ul>
+                                <li>Gestion d'état optimisée et publication sur les stores.</li>
+                                <li>Amélioration continue des performances et suivi des retours utilisateurs.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item reveal">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm accent-color font-semibold">Février 2020 – Janvier 2022</p>
                             <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Développeur Mobile</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology</p>
-                            <p class="text-var(--color-ghibli-cream)">Flutter, React Native, Java.</p>
+                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology, Antananarivo</p>
+                            <p class="text-var(--color-ghibli-cream)">Conception et développement d'applications (suivi de personnel, gestion immobilière, AR).</p>
+                            <ul>
+                                <li>Recherche de biens via réalité augmentée (ArCore, ArKit).</li>
+                                <li>Intégration d'API, animations, prise de photos et géolocalisation avancée.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 4️⃣ Section "Mes services" --><section id="services" class="py-20 md:py-32">
+            <section id="services" class="py-20 md:py-32">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">Mes services</h2>
                     <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Service Card 1 --><div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal">
                         <div class="accent-color mb-4"><i data-lucide="smartphone" class="w-10 h-10"></i></div>
                         <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Développement d'applications mobiles</h3>
                         <p class="text-var(--color-ghibli-light-blue)">Création d'applications natives et cross-platform avec Flutter, React Native, Swift et Kotlin.</p>
                     </div>
-                    <!-- Service Card 2 --><div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 150ms;">
+                    <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 150ms;">
                         <div class="accent-color mb-4"><i data-lucide="webhook" class="w-10 h-10"></i></div>
                         <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Intégration d’API et backend</h3>
                         <p class="text-var(--color-ghibli-light-blue)">Connexion de vos applications à des services tiers et gestion de la logique serveur.</p>
                     </div>
-                    <!-- Service Card 3 --><div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 300ms;">
+                    <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 300ms;">
                         <div class="accent-color mb-4"><i data-lucide="rocket" class="w-10 h-10"></i></div>
                         <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Optimisation de performances et UX</h3>
                         <p class="text-var(--color-ghibli-light-blue)">Amélioration de la fluidité, de la réactivité et de l'expérience utilisateur globale.</p>
                     </div>
-                    <!-- Service Card 4 --><div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 450ms;">
+                    <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 450ms;">
                         <div class="accent-color mb-4"><i data-lucide="package-check" class="w-10 h-10"></i></div>
                         <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Déploiement sur les Stores</h3>
                         <p class="text-var(--color-ghibli-light-blue)">Gestion complète du processus de publication sur l'App Store et Google Play.</p>
                     </div>
                 </div>
             </section>
-
-            <!-- 5️⃣ Section "Mes récents projets" -->
-             <!--
-             <section id="projets" class="py-20 md:py-32">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold reveal">Mes récents projets</h2>
-                    <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  
-                    <div class="project-card-ghibli rounded-lg overflow-hidden reveal">
-                        <img src="https://placehold.co/600x400/3D5A46/F5F1E4?text=Gasy'Kool" alt="Projet Gasy'Kool" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Gasy'Kool</h3>
-                            <p class="text-var(--color-ghibli-light-blue) mb-4">Application mobile de covoiturage pour faciliter les déplacements urbains et interurbains.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Flutter</span>
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Firebase</span>
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Google Maps API</span>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <a href="#" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex items-center gap-2"><i data-lucide="github"></i> Code</a>
-                                <a href="#" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex items-center gap-2"><i data-lucide="external-link"></i> Démo</a>
-                            </div>
-                        </div>
-                    </div>
             
-                    <div class="project-card-ghibli rounded-lg overflow-hidden reveal" style="transition-delay: 150ms;">
-                        <img src="https://placehold.co/600x400/5C7B8F/F5F1E4?text=E-vatsy" alt="Projet E-vatsy" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">E-vatsy</h3>
-                            <p class="text-var(--color-ghibli-light-blue) mb-4">Application de livraison de repas connectant les meilleurs restaurants locaux aux utilisateurs.</p>
-                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">React Native</span>
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Node.js</span>
-                                <span class="bg-var(--color-ghibli-dark-green) text-var(--color-ghibli-light-blue) text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">MongoDB</span>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <a href="#" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex items-center gap-2"><i data-lucide="github"></i> Code</a>
-                                <a href="#" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex items-center gap-2"><i data-lucide="external-link"></i> Démo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            --!>
-            <!-- 6️⃣ Section "Avis" --><section id="avis" class="py-20 md:py-32">
+            <section id="avis" class="py-20 md:py-32">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">Ce qu'ils disent de mon travail</h2>
                     <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
                 </div>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Avis 1 -->
                     <div class="testimonial-card-ghibli reveal">
                         <div class="flex items-center mb-4">
-                            <img src="./assets/img/misaina.jpeg" alt="Avis de Jean Dupont" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
+                            <img src="./assets/img/misaina.jpeg" alt="Avis de Misaina Rabe" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
                             <div>
                                 <h4 class="font-bold text-lg text-var(--color-ghibli-cream)">Misaina Rabe</h4>
                                 <p class="text-sm text-var(--color-ghibli-light-blue)">Consultante MOA</p>
@@ -410,10 +415,9 @@
                         </div>
                         <p class="text-var(--color-ghibli-cream) italic">"Ayant eu l'occasion de travailler avec Pierre, je suis impressionnée par sa façon de mener et superviser son équipe. Sa personnalité posée fait de lui le manager que la plupart des développeurs souhaiteraient avoir. Pierre a également une compétence en matière de relation avec l'équipe maitrise d'ouvrage. Il assure ses responsabilités que je le recommande sans hésitation pour un poste de lead développeur ou autres postes de management de techniciens."</p>
                     </div>
-                     <!-- Avis 2 -->
-                    <div class="testimonial-card-ghibli reveal" style="transition-delay: 150ms;">
+                     <div class="testimonial-card-ghibli reveal" style="transition-delay: 150ms;">
                         <div class="flex items-center mb-4">
-                            <img src="./assets/img/rabe_mamy.jpeg" alt="Avis de Marie Curie" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
+                            <img src="./assets/img/rabe_mamy.jpeg" alt="Avis de Rabe Mamy" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
                             <div>
                                 <h4 class="font-bold text-lg text-var(--color-ghibli-cream)">Rabe Mamy</h4>
                                 <p class="text-sm text-var(--color-ghibli-light-blue)">IT Business</p>
@@ -424,7 +428,7 @@
                 </div>
             </section>
 
-            <!-- 7️⃣ Section "Contact" --><section id="contact" class="py-20 md:py-32">
+            <section id="contact" class="py-20 md:py-32">
                  <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">Contact</h2>
                     <p class="mt-4 text-lg text-var(--color-ghibli-light-blue) reveal">N'hésitez pas à me contacter. Je suis ouvert aux nouvelles opportunités.</p>
@@ -446,7 +450,6 @@
                          </a>
                     </div>
                     <form id="contact-form" class="space-y-6 reveal">
-                        <!-- Champ caché pour la clé d'accès Web3Forms -->
                         <input type="hidden" name="access_key" value="922320b5-d4c0-4513-9201-59a37d90a233">
                         <input type="hidden" name="subject" value="Nouveau message depuis votre Portfolio">
                         <input type="hidden" name="from_name" value="Portfolio Ghibli">
@@ -493,7 +496,7 @@
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.1 /* Déclenche l'animation un peu plus tôt */
         });
 
         const revealElements = document.querySelectorAll('.reveal');
@@ -507,14 +510,9 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // IMPORTANT : Remplacez "VOTRE_CLE_D_ACCES_ICI" dans le champ caché du formulaire HTML
-            // par la clé que vous obtiendrez sur web3forms.com
             const accessKey = form.querySelector('input[name="access_key"]').value;
-            if (accessKey === "") {
-                formResult.innerHTML = "Veuillez configurer votre clé d'accès Web3Forms.";
-                formResult.className = "mt-6 text-center font-semibold p-4 border rounded-md text-red-400 border-red-400";
-                formResult.classList.remove('hidden');
-                return;
+            if (accessKey === "922320b5-d4c0-4513-9201-59a37d90a233") {
+                 // Clé par défaut, vous pouvez ajouter un avertissement si vous le souhaitez
             }
 
             const formData = new FormData(form);
@@ -564,4 +562,3 @@
     </script>
 </body>
 </html>
-
