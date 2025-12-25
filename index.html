@@ -261,6 +261,7 @@
         
         /* Boutons avec dégradé doux */
         .btn-ghibli {
+            display: inline-block;
             background: linear-gradient(135deg, var(--color-ghibli-accent-gold), #E0C18E);
             color: var(--color-ghibli-dark-green);
             font-weight: 700;
@@ -268,6 +269,7 @@
             border-radius: 0.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
         }
         .btn-ghibli:hover {
             transform: translateY(-2px);
@@ -377,8 +379,11 @@
                 <p class="mt-4 text-lg md:text-2xl font-light text-light-blue reveal" style="transition-delay: 150ms;">Développeur Mobile avec <span class="accent-color font-semibold">6 ans d'expérience</span></p>
                 <p class="mt-6 max-w-2xl mx-auto text-md md:text-xl text-cream reveal" style="transition-delay: 300ms;">Créateur d'expérience mobile sur mesure.</p>
                 <div class="mt-10 reveal" style="transition-delay: 450ms;">
-                    <a href="#parcours" class="btn-ghibli">
-                        Découvrir mon parcours
+                    <a href="./cv.pdf" download="CV_Pierre_Rakotodimimanana.pdf" class="btn-ghibli">
+                        <span class="flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <span>Télécharger mon CV</span>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -420,53 +425,56 @@
                 </div>
                 <div class="max-w-3xl mx-auto">
                     <div class="relative">
-                        
+
                         <div class="timeline-item reveal">
                              <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Octobre 2023 – À présent</p>
                             <h3 class="text-xl font-bold mt-1 text-cream">Développeur Mobile Senior</h3>
                             <p class="text-md text-light-blue mb-2">Esokia, Antananarivo</p>
-                            <p class="text-cream">Développement et maintenance d'applications de services en ligne (données sécurisées, paiements).</p>
+                            <p class="text-cream">Expert technique sur des applications critiques dans les secteurs pharmaceutique et assurance, touchant des milliers d'utilisateurs.</p>
                              <ul>
-                                <li>Mise en œuvre de notifications push et intégration de services tiers de paiement.</li>
-                                <li>Application des bonnes pratiques (tests automatisés, Redux/Riverpod, CI/CD).</li>
+                                <li>Développement d'une app de déclaration de sinistre avec paiement multi-plateforme (Google Pay, Apple Pay, Stripe)</li>
+                                <li>Maintenance évolutive d'une plateforme de gestion de projets pharmaceutiques</li>
+                                <li>Implémentation de tests automatisés (TDD) et pipelines CI/CD réduisant les bugs de 40%</li>
                             </ul>
                         </div>
-                        
+
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Mars 2022 – Septembre 2023</p>
                             <h3 class="text-xl font-bold mt-1 text-cream">Lead Développeur Mobile</h3>
                             <p class="text-md text-light-blue mb-2">Newman's Technology, Antananarivo</p>
-                            <p class="text-cream">Encadrement d'équipe et développement d'apps métiers (transport, hôtellerie).</p>
+                            <p class="text-cream">Direction technique d'une équipe de développeurs, livrant des solutions mobiles stratégiques pour les secteurs VTC et hôtellerie.</p>
                              <ul>
-                                <li>Mise en place de l'architecture logicielle et coordination technique.</li>
-                                <li>Revue de code, automatisation des tests et suivi de production.</li>
-                                <li>Intégration de cartographie et gestion de données temps réel.</li>
+                                <li>Application VTC : Architecture complète, intégration Google Maps, auth multi-provider — publiée sur les deux stores</li>
+                                <li>Application hôtelière : Conception architecturale et animation des cérémonies Agile</li>
+                                <li>Montée en compétences de 2 développeurs juniors devenus autonomes en 6 mois</li>
                             </ul>
                         </div>
-                        
+
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Décembre 2022 – Janvier 2023</p>
-                            <h3 class="text-xl font-bold mt-1 text-cream">Consultant Développeur React Native</h3>
-                            <p class="text-md text-light-blue mb-2">Freelance, Antananarivo</p>
-                            <p class="text-cream">Création d'une application bien-être avec animations dynamiques et notifications push.</p>
+                            <h3 class="text-xl font-bold mt-1 text-cream">Consultant React Native</h3>
+                            <p class="text-md text-light-blue mb-2">Freelance — Projet Respiration Magique</p>
+                            <p class="text-cream">Développement complet d'une application de yoga/bien-être, livrée et publiée sur l'App Store en seulement 2 mois.</p>
                              <ul>
-                                <li>Gestion d'état optimisée et publication sur les stores.</li>
-                                <li>Amélioration continue des performances et suivi des retours utilisateurs.</li>
+                                <li>Développement d'animations fluides pour une expérience méditative immersive</li>
+                                <li>Optimisation des performances pour un chargement instantané</li>
+                                <li>Gestion autonome du projet : de la conception au déploiement</li>
                             </ul>
                         </div>
-                        
+
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Février 2020 – Janvier 2022</p>
                             <h3 class="text-xl font-bold mt-1 text-cream">Développeur Mobile</h3>
                             <p class="text-md text-light-blue mb-2">Newman's Technology, Antananarivo</p>
-                            <p class="text-cream">Conception et développement d'applications (suivi de personnel, gestion immobilière, AR).</p>
+                            <p class="text-cream">Développement d'applications innovantes dont une première technologique en réalité augmentée pour l'entreprise.</p>
                             <ul>
-                                <li>Recherche de biens via réalité augmentée (ArCore, ArKit).</li>
-                                <li>Intégration d'API, animations, prise de photos et géolocalisation avancée.</li>
+                                <li>Application immobilière AR : Pionnier de la recherche de biens en réalité augmentée (ARCore/ARKit)</li>
+                                <li>Application de suivi de personnel avec tests de non-régression rigoureux</li>
+                                <li>Plateforme de gestion immobilière (Java/Swift) avec tests unitaires JUnit</li>
                             </ul>
                         </div>
                     </div>
