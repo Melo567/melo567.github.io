@@ -3,18 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierre Rakotodimimanana | Développeur Mobile</title>
+    <title>Pierre Rakotodimimanana | Développeur Mobile Flutter & React Native</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Développeur Mobile Senior avec 6 ans d'expérience en Flutter, React Native, Kotlin et Swift. Création d'applications mobiles performantes et sur mesure à Madagascar.">
+    <meta name="keywords" content="développeur mobile, Flutter, React Native, Kotlin, Swift, application mobile, Madagascar, Antananarivo, développeur freelance">
+    <meta name="author" content="Pierre Rakotodimimanana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://melo567.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://melo567.github.io/">
+    <meta property="og:title" content="Pierre Rakotodimimanana | Développeur Mobile Flutter & React Native">
+    <meta property="og:description" content="Développeur Mobile Senior avec 6 ans d'expérience. Création d'applications mobiles performantes et sur mesure.">
+    <meta property="og:image" content="https://melo567.github.io/assets/img/pierre.jpg">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://melo567.github.io/">
+    <meta name="twitter:title" content="Pierre Rakotodimimanana | Développeur Mobile">
+    <meta name="twitter:description" content="Développeur Mobile Senior avec 6 ans d'expérience en Flutter, React Native, Kotlin et Swift.">
+    <meta name="twitter:image" content="https://melo567.github.io/assets/img/pierre.jpg">
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pierre Rakotodimimanana",
+        "jobTitle": "Développeur Mobile Senior",
+        "description": "Développeur Mobile Senior avec 6 ans d'expérience en Flutter, React Native, Kotlin et Swift.",
+        "url": "https://melo567.github.io/",
+        "image": "https://melo567.github.io/assets/img/pierre.png",
+        "email": "pierrerakotodimimanana@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Antananarivo",
+            "addressCountry": "MG"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/pierre-rakotodimimanana/"
+        ],
+        "knowsAbout": ["Flutter", "React Native", "Kotlin", "Swift", "Firebase", "Mobile Development", "Clean Architecture"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Esokia"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Pierre Rakotodimimanana - Développeur Mobile",
+        "description": "Services de développement d'applications mobiles sur mesure avec Flutter, React Native, Kotlin et Swift.",
+        "url": "https://melo567.github.io/",
+        "image": "https://melo567.github.io/assets/img/pierre.png",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Antananarivo",
+            "addressCountry": "MG"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Madagascar"
+        },
+        "serviceType": ["Développement Mobile", "Applications Flutter", "Applications React Native", "Intégration API"]
+    }
+    </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon/favicon.svg">
     <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
     <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="icon" type="image/png" href="./assets/img/favicon-96x96.png">
-    
+    <!-- Tailwind CSS compilé -->
+    <link rel="stylesheet" href="./assets/css/tailwind.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -22,10 +91,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Configuration Tailwind personnalisée pour les couleurs Ghibli-esque */
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
 
         :root {
             --color-ghibli-dark-green: #3D5A46;
@@ -50,13 +115,33 @@
         .accent-color {
             color: var(--color-ghibli-accent-gold);
         }
-        
+
         .bg-accent {
             background-color: var(--color-ghibli-accent-gold);
         }
 
         .border-accent {
             border-color: var(--color-ghibli-accent-gold);
+        }
+
+        /* Classes de couleur personnalisées */
+        .text-cream {
+            color: var(--color-ghibli-cream);
+        }
+        .text-light-blue {
+            color: var(--color-ghibli-light-blue);
+        }
+        .text-dark-green {
+            color: var(--color-ghibli-dark-green);
+        }
+        .bg-medium-green {
+            background-color: var(--color-ghibli-medium-green);
+        }
+        .bg-dark-green {
+            background-color: var(--color-ghibli-dark-green);
+        }
+        .border-medium-green {
+            border-color: var(--color-ghibli-medium-green);
         }
 
         /* Styles pour la timeline Ghibli-esque */
@@ -245,20 +330,38 @@
 </head>
 <body class="antialiased">
 
-    <header class="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-sm bg-var(--color-ghibli-dark-green)/80 z-50 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full backdrop-blur-sm bg-dark-green/80 z-50 transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="#accueil" class="text-2xl font-bold accent-color">Pierre R.</a>
                 </div>
+                <!-- Menu Desktop -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#a-propos" class="text-var(--color-ghibli-light-blue) hover:text-var(--color-ghibli-accent-gold) px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">À propos</a>
-                        <a href="#parcours" class="text-var(--color-ghibli-light-blue) hover:text-var(--color-ghibli-accent-gold) px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Parcours</a>
-                        <a href="#services" class="text-var(--color-ghibli-light-blue) hover:text-var(--color-ghibli-accent-gold) px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Services</a>
-                        <a href="#avis" class="text-var(--color-ghibli-light-blue) hover:text-var(--color-ghibli-accent-gold) px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Avis</a>
-                        <a href="#contact" class="text-var(--color-ghibli-light-blue) hover:text-var(--color-ghibli-accent-gold) px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                        <a href="#a-propos" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">À propos</a>
+                        <a href="#parcours" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Parcours</a>
+                        <a href="#services" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Services</a>
+                        <a href="#avis" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Avis</a>
+                        <a href="#contact" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
                     </div>
+                </div>
+                <!-- Bouton Menu Mobile -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-cream hover:accent-color focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon-open"></i>
+                        <i data-lucide="x" class="w-6 h-6 hidden" id="menu-icon-close"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#a-propos" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">À propos</a>
+                    <a href="#parcours" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Parcours</a>
+                    <a href="#services" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Services</a>
+                    <a href="#avis" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Avis</a>
+                    <a href="#contact" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Contact</a>
                 </div>
             </div>
         </nav>
@@ -270,9 +373,9 @@
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
             <div class="text-center z-10 p-4">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-var(--color-ghibli-cream) reveal">Pierre Rakotodimimanana</h1>
-                <p class="mt-4 text-lg md:text-2xl font-light text-var(--color-ghibli-light-blue) reveal" style="transition-delay: 150ms;">Développeur Mobile avec <span class="accent-color font-semibold">6 ans d’expérience</span></p>
-                <p class="mt-6 max-w-2xl mx-auto text-md md:text-xl text-var(--color-ghibli-cream) reveal" style="transition-delay: 300ms;">Créateur d'expérience mobile sur mesure.</p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-cream reveal">Pierre Rakotodimimanana</h1>
+                <p class="mt-4 text-lg md:text-2xl font-light text-light-blue reveal" style="transition-delay: 150ms;">Développeur Mobile avec <span class="accent-color font-semibold">6 ans d'expérience</span></p>
+                <p class="mt-6 max-w-2xl mx-auto text-md md:text-xl text-cream reveal" style="transition-delay: 300ms;">Créateur d'expérience mobile sur mesure.</p>
                 <div class="mt-10 reveal" style="transition-delay: 450ms;">
                     <a href="#parcours" class="btn-ghibli">
                         Découvrir mon parcours
@@ -290,20 +393,20 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2 reveal">
-                        <img src="./assets/img/pierre.jpg" alt="Photo de profil de Pierre Rakotodimimanana" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto shadow-2xl profile-photo-ghibli">
+                        <img src="./assets/img/pierre.png" alt="Photo de profil de Pierre Rakotodimimanana, développeur mobile senior" loading="lazy" width="256" height="256" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto shadow-2xl profile-photo-ghibli">
                     </div>
                     <div class="md:col-span-3 reveal" style="transition-delay: 150ms;">
-                        <p class="text-var(--color-ghibli-cream) leading-relaxed text-lg">
-                            Développeur mobile passionné, je possède plus de six ans d'expérience, principalement dans le développement d'applications. Mon expertise en Clean Architecture et les bonnes pratiques de développement mobile m'ont permis de travailler sur des applications à forte audience, dans un cadre Agile/Scrum. Je suis particulièrement compétent dans l’optimisation de la performance et de l’expérience utilisateur, tout en intégrant des fonctionnalités innovantes basées sur l’intelligence artificielle.
+                        <p class="text-cream leading-relaxed text-lg">
+                            Développeur mobile passionné, je possède plus de six ans d'expérience, principalement dans le développement d'applications. Mon expertise en Clean Architecture et les bonnes pratiques de développement mobile m'ont permis de travailler sur des applications à forte audience, dans un cadre Agile/Scrum. Je suis particulièrement compétent dans l'optimisation de la performance et de l'expérience utilisateur, tout en intégrant des fonctionnalités innovantes basées sur l'intelligence artificielle.
                         </p>
                         <div class="mt-8 flex flex-wrap gap-4 items-center">
-                            <span class="font-semibold text-var(--color-ghibli-light-blue)">Technologies :</span>
+                            <span class="font-semibold text-light-blue">Technologies :</span>
                             <div class="flex flex-wrap gap-4">
-                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="smartphone"></i>Flutter</span>
-                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="atom"></i>React Native</span>
-                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="code"></i>Kotlin</span>
-                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="code-2"></i>Swift</span>
-                                <span class="bg-var(--color-ghibli-medium-green) p-2 rounded-md text-sm font-mono flex items-center gap-2 text-var(--color-ghibli-cream)"><i data-lucide="database"></i>Firebase</span>
+                                <span class="bg-medium-green p-2 rounded-md text-sm font-mono flex items-center gap-2 text-cream"><i data-lucide="smartphone"></i>Flutter</span>
+                                <span class="bg-medium-green p-2 rounded-md text-sm font-mono flex items-center gap-2 text-cream"><i data-lucide="atom"></i>React Native</span>
+                                <span class="bg-medium-green p-2 rounded-md text-sm font-mono flex items-center gap-2 text-cream"><i data-lucide="code"></i>Kotlin</span>
+                                <span class="bg-medium-green p-2 rounded-md text-sm font-mono flex items-center gap-2 text-cream"><i data-lucide="code-2"></i>Swift</span>
+                                <span class="bg-medium-green p-2 rounded-md text-sm font-mono flex items-center gap-2 text-cream"><i data-lucide="database"></i>Firebase</span>
                             </div>
                         </div>
                     </div>
@@ -321,9 +424,9 @@
                         <div class="timeline-item reveal">
                              <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Octobre 2023 – À présent</p>
-                            <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Développeur Mobile Senior</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Esokia, Antananarivo</p>
-                            <p class="text-var(--color-ghibli-cream)">Développement et maintenance d'applications de services en ligne (données sécurisées, paiements).</p>
+                            <h3 class="text-xl font-bold mt-1 text-cream">Développeur Mobile Senior</h3>
+                            <p class="text-md text-light-blue mb-2">Esokia, Antananarivo</p>
+                            <p class="text-cream">Développement et maintenance d'applications de services en ligne (données sécurisées, paiements).</p>
                              <ul>
                                 <li>Mise en œuvre de notifications push et intégration de services tiers de paiement.</li>
                                 <li>Application des bonnes pratiques (tests automatisés, Redux/Riverpod, CI/CD).</li>
@@ -333,9 +436,9 @@
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Mars 2022 – Septembre 2023</p>
-                            <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Lead Développeur Mobile</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology, Antananarivo</p>
-                            <p class="text-var(--color-ghibli-cream)">Encadrement d'équipe et développement d'apps métiers (transport, hôtellerie).</p>
+                            <h3 class="text-xl font-bold mt-1 text-cream">Lead Développeur Mobile</h3>
+                            <p class="text-md text-light-blue mb-2">Newman's Technology, Antananarivo</p>
+                            <p class="text-cream">Encadrement d'équipe et développement d'apps métiers (transport, hôtellerie).</p>
                              <ul>
                                 <li>Mise en place de l'architecture logicielle et coordination technique.</li>
                                 <li>Revue de code, automatisation des tests et suivi de production.</li>
@@ -346,9 +449,9 @@
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Décembre 2022 – Janvier 2023</p>
-                            <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Consultant Développeur React Native</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Freelance, Antananarivo</p>
-                            <p class="text-var(--color-ghibli-cream)">Création d'une application bien-être avec animations dynamiques et notifications push.</p>
+                            <h3 class="text-xl font-bold mt-1 text-cream">Consultant Développeur React Native</h3>
+                            <p class="text-md text-light-blue mb-2">Freelance, Antananarivo</p>
+                            <p class="text-cream">Création d'une application bien-être avec animations dynamiques et notifications push.</p>
                              <ul>
                                 <li>Gestion d'état optimisée et publication sur les stores.</li>
                                 <li>Amélioration continue des performances et suivi des retours utilisateurs.</li>
@@ -358,9 +461,9 @@
                         <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <p class="text-sm accent-color font-semibold">Février 2020 – Janvier 2022</p>
-                            <h3 class="text-xl font-bold mt-1 text-var(--color-ghibli-cream)">Développeur Mobile</h3>
-                            <p class="text-md text-var(--color-ghibli-light-blue) mb-2">Newman's Technology, Antananarivo</p>
-                            <p class="text-var(--color-ghibli-cream)">Conception et développement d'applications (suivi de personnel, gestion immobilière, AR).</p>
+                            <h3 class="text-xl font-bold mt-1 text-cream">Développeur Mobile</h3>
+                            <p class="text-md text-light-blue mb-2">Newman's Technology, Antananarivo</p>
+                            <p class="text-cream">Conception et développement d'applications (suivi de personnel, gestion immobilière, AR).</p>
                             <ul>
                                 <li>Recherche de biens via réalité augmentée (ArCore, ArKit).</li>
                                 <li>Intégration d'API, animations, prise de photos et géolocalisation avancée.</li>
@@ -378,23 +481,23 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal">
                         <div class="accent-color mb-4"><i data-lucide="smartphone" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Développement d'applications mobiles</h3>
-                        <p class="text-var(--color-ghibli-light-blue)">Création d'applications natives et cross-platform avec Flutter, React Native, Swift et Kotlin.</p>
+                        <h3 class="text-xl font-bold text-cream mb-2">Développement d'applications mobiles</h3>
+                        <p class="text-light-blue">Création d'applications natives et cross-platform avec Flutter, React Native, Swift et Kotlin.</p>
                     </div>
                     <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 150ms;">
                         <div class="accent-color mb-4"><i data-lucide="webhook" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Intégration d’API et backend</h3>
-                        <p class="text-var(--color-ghibli-light-blue)">Connexion de vos applications à des services tiers et gestion de la logique serveur.</p>
+                        <h3 class="text-xl font-bold text-cream mb-2">Intégration d'API et backend</h3>
+                        <p class="text-light-blue">Connexion de vos applications à des services tiers et gestion de la logique serveur.</p>
                     </div>
                     <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 300ms;">
                         <div class="accent-color mb-4"><i data-lucide="rocket" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Optimisation de performances et UX</h3>
-                        <p class="text-var(--color-ghibli-light-blue)">Amélioration de la fluidité, de la réactivité et de l'expérience utilisateur globale.</p>
+                        <h3 class="text-xl font-bold text-cream mb-2">Optimisation de performances et UX</h3>
+                        <p class="text-light-blue">Amélioration de la fluidité, de la réactivité et de l'expérience utilisateur globale.</p>
                     </div>
                     <div class="service-card-ghibli p-6 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 450ms;">
                         <div class="accent-color mb-4"><i data-lucide="package-check" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-bold text-var(--color-ghibli-cream) mb-2">Déploiement sur les Stores</h3>
-                        <p class="text-var(--color-ghibli-light-blue)">Gestion complète du processus de publication sur l'App Store et Google Play.</p>
+                        <h3 class="text-xl font-bold text-cream mb-2">Déploiement sur les Stores</h3>
+                        <p class="text-light-blue">Gestion complète du processus de publication sur l'App Store et Google Play.</p>
                     </div>
                 </div>
             </section>
@@ -407,23 +510,23 @@
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="testimonial-card-ghibli reveal">
                         <div class="flex items-center mb-4">
-                            <img src="./assets/img/misaina.jpeg" alt="Avis de Misaina Rabe" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
+                            <img src="./assets/img/misaina.jpeg" alt="Photo de Misaina Rabe, Consultante MOA" loading="lazy" width="64" height="64" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
                             <div>
-                                <h4 class="font-bold text-lg text-var(--color-ghibli-cream)">Misaina Rabe</h4>
-                                <p class="text-sm text-var(--color-ghibli-light-blue)">Consultante MOA</p>
+                                <h4 class="font-bold text-lg text-cream">Misaina Rabe</h4>
+                                <p class="text-sm text-light-blue">Consultante MOA</p>
                             </div>
                         </div>
-                        <p class="text-var(--color-ghibli-cream) italic">"Ayant eu l'occasion de travailler avec Pierre, je suis impressionnée par sa façon de mener et superviser son équipe. Sa personnalité posée fait de lui le manager que la plupart des développeurs souhaiteraient avoir. Pierre a également une compétence en matière de relation avec l'équipe maitrise d'ouvrage. Il assure ses responsabilités que je le recommande sans hésitation pour un poste de lead développeur ou autres postes de management de techniciens."</p>
+                        <p class="text-cream italic">"Ayant eu l'occasion de travailler avec Pierre, je suis impressionnée par sa façon de mener et superviser son équipe. Sa personnalité posée fait de lui le manager que la plupart des développeurs souhaiteraient avoir. Pierre a également une compétence en matière de relation avec l'équipe maitrise d'ouvrage. Il assure ses responsabilités que je le recommande sans hésitation pour un poste de lead développeur ou autres postes de management de techniciens."</p>
                     </div>
                      <div class="testimonial-card-ghibli reveal" style="transition-delay: 150ms;">
                         <div class="flex items-center mb-4">
-                            <img src="./assets/img/rabe_mamy.jpeg" alt="Avis de Rabe Mamy" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
+                            <img src="./assets/img/rabe_mamy.jpeg" alt="Photo de Rabe Mamy, IT Business" loading="lazy" width="64" height="64" class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
                             <div>
-                                <h4 class="font-bold text-lg text-var(--color-ghibli-cream)">Rabe Mamy</h4>
-                                <p class="text-sm text-var(--color-ghibli-light-blue)">IT Business</p>
+                                <h4 class="font-bold text-lg text-cream">Rabe Mamy</h4>
+                                <p class="text-sm text-light-blue">IT Business</p>
                             </div>
                         </div>
-                        <p class="text-var(--color-ghibli-cream) italic">"Pierre a été demandé à développer une application mobile. Il a travaillé avec rigueur. Communicatif et ponctuel, il a su donner un travail de professionnel. Je le recommande."</p>
+                        <p class="text-cream italic">"Pierre a été demandé à développer une application mobile. Il a travaillé avec rigueur. Communicatif et ponctuel, il a su donner un travail de professionnel. Je le recommande."</p>
                     </div>
                 </div>
             </section>
@@ -431,20 +534,20 @@
             <section id="contact" class="py-20 md:py-32">
                  <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold reveal">Contact</h2>
-                    <p class="mt-4 text-lg text-var(--color-ghibli-light-blue) reveal">N'hésitez pas à me contacter. Je suis ouvert aux nouvelles opportunités.</p>
+                    <p class="mt-4 text-lg text-light-blue reveal">N'hésitez pas à me contacter. Je suis ouvert aux nouvelles opportunités.</p>
                     <div class="w-24 h-1 bg-accent mx-auto mt-4 reveal"></div>
                 </div>
                 <div class="max-w-2xl mx-auto">
                     <div class="flex justify-center space-x-8 mb-12 reveal">
-                         <a href="mailto:pierrerakotodimimanana@gmail.com" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
+                         <a href="mailto:pierrerakotodimimanana@gmail.com" class="text-light-blue hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
                              <i data-lucide="mail" class="w-8 h-8"></i>
                              <span class="text-sm">Email</span>
                          </a>
-                         <a href="https://www.linkedin.com/in/pierre-rakotodimimanana/" target="_blank" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
+                         <a href="https://www.linkedin.com/in/pierre-rakotodimimanana/" target="_blank" class="text-light-blue hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
                              <i data-lucide="linkedin" class="w-8 h-8"></i>
                              <span class="text-sm">LinkedIn</span>
                          </a>
-                         <a href="https://wa.me/+261341522953" target="_blank" rel="noopener noreferrer" class="text-var(--color-ghibli-light-blue) hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
+                         <a href="https://wa.me/+261341522953" target="_blank" rel="noopener noreferrer" class="text-light-blue hover:accent-color transition-colors duration-300 flex flex-col items-center gap-2">
                              <i data-lucide="message-circle" class="w-8 h-8"></i>
                              <span class="text-sm">WhatsApp</span>
                          </a>
@@ -478,8 +581,8 @@
         </div>
     </main>
 
-    <footer class="bg-var(--color-ghibli-dark-green) border-t border-var(--color-ghibli-medium-green)">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-var(--color-ghibli-light-blue)">
+    <footer class="bg-dark-green border-t border-medium-green">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-light-blue">
             <p>&copy; 2025 Pierre Rakotodimimanana</p>
         </div>
     </footer>
@@ -487,6 +590,31 @@
     <script>
         // Initialisation des icônes Lucide
         lucide.createIcons();
+
+        // Menu Mobile Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
 
         // Animation au scroll
         const observer = new IntersectionObserver((entries) => {

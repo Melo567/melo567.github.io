@@ -1,0 +1,24 @@
+{
+  "name": "melo567.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio de Pierre Rakotodimimanana - Développeur Mobile",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --watch",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melo567/melo567.github.io.git"
+  },
+  "keywords": ["portfolio", "developer", "mobile", "flutter", "react-native"],
+  "author": "Pierre Rakotodimimanana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melo567/melo567.github.io/issues"
+  },
+  "homepage": "https://melo567.github.io",
+  "devDependencies": {
+    "tailwindcss-cli": "^0.1.2"
+  }
+}
