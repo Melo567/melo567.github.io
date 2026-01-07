@@ -331,7 +331,6 @@
 
         /* Liquid Glass Effect pour le Header */
         .liquid-glass-header {
-            position: relative;
             background: rgba(61, 90, 70, 0.3);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -341,11 +340,11 @@
 
         .liquid-glass-header::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            height: 64px;
             background: linear-gradient(
                 135deg,
                 rgba(162, 208, 193, 0.1) 0%,
@@ -358,15 +357,16 @@
             animation: liquidFlow 15s ease infinite;
             z-index: -1;
             opacity: 0.6;
+            pointer-events: none;
         }
 
         .liquid-glass-header::after {
             content: '';
-            position: absolute;
-            top: -50%;
+            position: fixed;
+            top: -32px;
             left: -50%;
             width: 200%;
-            height: 200%;
+            height: 128px;
             background: radial-gradient(
                 circle,
                 rgba(162, 208, 193, 0.3) 0%,
@@ -375,6 +375,7 @@
             animation: liquidRotate 20s linear infinite;
             z-index: -1;
             opacity: 0.4;
+            pointer-events: none;
         }
 
         @keyframes liquidFlow {
@@ -403,13 +404,13 @@
 
         /* Effet de particules flottantes dans le header */
         .liquid-particles {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 64px;
             overflow: hidden;
-            z-index: -1;
+            z-index: 40;
             pointer-events: none;
         }
 
@@ -489,7 +490,7 @@
             <span></span>
             <span></span>
         </div>
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="#accueil" class="text-2xl font-bold accent-color">Pierre R.</a>
