@@ -328,11 +328,167 @@
             padding: 2rem;
             border-radius: 0.5rem;
         }
+
+        /* Liquid Glass Effect pour le Header */
+        .liquid-glass-header {
+            position: relative;
+            background: rgba(61, 90, 70, 0.3);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .liquid-glass-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(162, 208, 193, 0.1) 0%,
+                rgba(92, 123, 143, 0.15) 25%,
+                rgba(108, 139, 119, 0.1) 50%,
+                rgba(210, 168, 96, 0.1) 75%,
+                rgba(162, 208, 193, 0.1) 100%
+            );
+            background-size: 400% 400%;
+            animation: liquidFlow 15s ease infinite;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .liquid-glass-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle,
+                rgba(162, 208, 193, 0.3) 0%,
+                transparent 50%
+            );
+            animation: liquidRotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        @keyframes liquidFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes liquidRotate {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.1);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        /* Effet de particules flottantes dans le header */
+        .liquid-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .liquid-particles span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(162, 208, 193, 0.3);
+            border-radius: 50%;
+            animation: floatParticle 10s linear infinite;
+            filter: blur(2px);
+        }
+
+        .liquid-particles span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 8s;
+        }
+
+        .liquid-particles span:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .liquid-particles span:nth-child(3) {
+            left: 50%;
+            animation-delay: 4s;
+            animation-duration: 10s;
+        }
+
+        .liquid-particles span:nth-child(4) {
+            left: 70%;
+            animation-delay: 1s;
+            animation-duration: 14s;
+        }
+
+        .liquid-particles span:nth-child(5) {
+            left: 90%;
+            animation-delay: 3s;
+            animation-duration: 9s;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100%) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%) translateX(50px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Amélioration du glassmorphisme sur scroll */
+        .liquid-glass-header.scrolled {
+            background: rgba(61, 90, 70, 0.6);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="fixed top-0 left-0 w-full backdrop-blur-sm bg-dark-green/80 z-50 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full liquid-glass-header z-50 transition-all duration-300">
+        <div class="liquid-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -598,6 +754,16 @@
     <script>
         // Initialisation des icônes Lucide
         lucide.createIcons();
+
+        // Effet Liquid Glass sur scroll
+        const header = document.querySelector('.liquid-glass-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
         // Menu Mobile Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
