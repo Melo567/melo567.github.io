@@ -101,10 +101,16 @@
             --color-ghibli-dark-blue: #5C7B8F;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, var(--color-ghibli-dark-green) 0%, var(--color-ghibli-dark-blue) 100%);
+            background-attachment: fixed;
             color: var(--color-ghibli-cream);
+            min-height: 100vh;
         }
 
         h1, h2, h3 {
@@ -331,12 +337,16 @@
 
         /* Liquid Glass Effect pour le Header */
         .liquid-glass-header {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
             background: rgba(61, 90, 70, 0.3);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            z-index: 9999;
         }
 
         .liquid-glass-header::before {
@@ -369,10 +379,9 @@
             height: 200%;
             background: radial-gradient(
                 circle,
-                rgba(162, 208, 193, 0.3) 0%,
-                transparent 50%
+                rgba(162, 208, 193, 0.1) 0%,
+                transparent 0%
             );
-            animation: liquidRotate 20s linear infinite;
             z-index: -1;
             opacity: 0.4;
         }
@@ -386,18 +395,6 @@
             }
             100% {
                 background-position: 0% 50%;
-            }
-        }
-
-        @keyframes liquidRotate {
-            0% {
-                transform: rotate(0deg) scale(1);
-            }
-            50% {
-                transform: rotate(180deg) scale(1.1);
-            }
-            100% {
-                transform: rotate(360deg) scale(1);
             }
         }
 
@@ -481,7 +478,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="fixed top-0 left-0 w-full liquid-glass-header z-50 transition-all duration-300">
+    <header class="liquid-glass-header transition-all duration-300">
         <div class="liquid-particles">
             <span></span>
             <span></span>
@@ -497,11 +494,11 @@
                 <!-- Menu Desktop -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#a-propos" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">À propos</a>
-                        <a href="#parcours" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Parcours</a>
-                        <a href="#services" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Services</a>
-                        <a href="#avis" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Avis</a>
-                        <a href="#contact" class="text-light-blue hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                        <a href="#a-propos" class="text-white hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">À propos</a>
+                        <a href="#parcours" class="text-white hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Parcours</a>
+                        <a href="#services" class="text-white hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Services</a>
+                        <a href="#avis" class="text-white hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Avis</a>
+                        <a href="#contact" class="text-white hover:accent-color px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
                     </div>
                 </div>
                 <!-- Bouton Menu Mobile -->
@@ -515,17 +512,17 @@
             <!-- Menu Mobile -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col space-y-2">
-                    <a href="#a-propos" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">À propos</a>
-                    <a href="#parcours" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Parcours</a>
-                    <a href="#services" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Services</a>
-                    <a href="#avis" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Avis</a>
-                    <a href="#contact" class="mobile-nav-link text-light-blue hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Contact</a>
+                    <a href="#a-propos" class="mobile-nav-link text-white hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">À propos</a>
+                    <a href="#parcours" class="mobile-nav-link text-white hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Parcours</a>
+                    <a href="#services" class="mobile-nav-link text-white hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Services</a>
+                    <a href="#avis" class="mobile-nav-link text-white hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Avis</a>
+                    <a href="#contact" class="mobile-nav-link text-white hover:accent-color px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Contact</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="pt-16">
         <section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <div class="animated-bg">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
